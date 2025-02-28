@@ -1,0 +1,23 @@
+{
+  "name": "telegram-summary",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "ts-node src/server.ts"
+  },
+  "keywords": [],
+  "author": "André Souza",
+  "license": "ISC",
+  "description": "Generate a summary of the messages in a Telegram topic",
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.8.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "telegram": "^2.26.22"
+  }
+}
