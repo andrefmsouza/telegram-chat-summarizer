@@ -14,7 +14,7 @@ Before running the project, make sure you have the following installed:
 - [Node.js](https://nodejs.org/) (latest LTS version recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 - A Telegram API ID and Hash (can be obtained from [my.telegram.org](https://my.telegram.org/apps))
-- A session string for Telegram
+- A session string for Telegram (if you don't have one, the program will send a code to your Telegram and display the connection string on screen)
 - An AI model running locally or via an API (e.g., LM Studio with DeepSeek, OpenAI API, or any compatible service)
 
 ## Installation

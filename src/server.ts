@@ -98,7 +98,24 @@ async function fetchMessages(): Promise<string> {
   let textContent = "";
   try {
     console.log("Getting messages");
-    await client.connect();
+    if( TELEGRAM_SESSION === "" ) {
+      await client.start({
+        phoneNumber: async () => process.env.TELEGRAM_PHONE_NUMBER || "",
+        password: async () => process.env.TELEGRAM_PASSWORD || "",
+        phoneCode: async () => {
+          console.log("Enter the code received on Telegram:");
+          return new Promise<string>((resolve) => {
+            process.stdin.once("data", (data) => resolve(data.toString().trim()));
+          });
+        },
+        onError: (err) => console.error(err),
+      });
+
+      console.log("Session String:", client.session.save());
+    }else{
+      await client.connect();
+    }
+
     const messages = await client.getMessages(TELEGRAM_GROUP_ID, {
       limit: MESSAGE_LIMIT,
       replyTo: TOPIC_ID,
