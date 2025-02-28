@@ -1,5 +1,5 @@
 {
-  "name": "telegram-summary",
+  "name": "telegram-chat-summarizer",
   "version": "0.0.1",
   "main": "src/index.js",
   "scripts": {
