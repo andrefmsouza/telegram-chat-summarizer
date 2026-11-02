@@ -1,23 +1,46 @@
 {
   "name": "telegram-chat-summarizer",
-  "version": "0.0.1",
-  "main": "src/index.js",
-  "scripts": {
-    "dev": "ts-node src/server.ts"
-  },
-  "keywords": [],
+  "version": "1.0.0",
+  "description": "Summarize a Telegram group or topic with the AI of your choice: a local model, any OpenAI-compatible API or Claude Code.",
   "author": "André Souza",
-  "license": "ISC",
-  "description": "Generate a summary of the messages in a Telegram topic",
-  "devDependencies": {
-    "@types/node": "^22.13.5",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrefmsouza/telegram-chat-summarizer.git"
+  },
+  "keywords": [
+    "telegram",
+    "summary",
+    "llm",
+    "openai",
+    "lm-studio",
+    "ollama",
+    "claude-code"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "tg-summarize": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "summarize": "tsx src/cli.ts",
+    "login": "tsx src/login.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test \"test/**/*.test.ts\""
   },
   "dependencies": {
-    "axios": "^1.8.1",
-    "dayjs": "^1.11.13",
-    "dotenv": "^16.4.7",
-    "telegram": "^2.26.22"
+    "openai": "^7.47.0",
+    "telegram": "^2.26.22",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.3"
   }
 }
